@@ -24,12 +24,12 @@ jobs:
       - name: Build
         run: bun run build
 
-      # - name: Create Cloudflare Pages project
-      #   uses: cloudflare/wrangler-action@v3
-      #   continue-on-error: true
-      #   with:
-      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      #     command: pages project create my-remix-app --production-branch main
+      - name: Create Cloudflare Pages project
+        uses: cloudflare/wrangler-action@v3
+        continue-on-error: true
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages project create my-remix-app --production-branch main
 
       - name: Deploy Cloudflare Pages project
         uses: cloudflare/wrangler-action@v3
